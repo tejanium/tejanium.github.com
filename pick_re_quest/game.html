@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Pick Re:Quest</title>
+  <script>
+    window.game_configuration = {
+      p1_loc: 6,
+      p2_loc: 14,
+      c1_loc: 9,
+      c2_loc: 10,
+      d1: 3,
+      d2: 3,
+      alert: true
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="js/game_engine/index.js"></script>
+  <script type="module" src="js/dom_renderer/index.js"></script>
+</head>
+
+<body>
+  <div class="flex items-center justify-center m-5">
+    <div id="game-container" class="text-center"></div>
+  </div>
+
+  <div class="flex items-center justify-center m-5">
+    <ul class="list-decimal">
+      <li>You win if you put all the diamonds into any chest.</li>
+      <li>The fewer turns the better!</li>
+      <li>Remember, this is a game of cooperation.</li>
+      <li>You can with with <b>68</b> turns</li>
+    </ul>
+  </div>
+
+  <div class="flex items-center justify-center m-5 hidden space-x-2" id="next-page">
+    <a href="game.html" class="mt-5 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+      Play again!
+    </a>
+    <a href="takeaway.html" class="mt-5 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+      That was easy! What's the point?
+    </a>
+  </div>
+</body>
+
+</html>

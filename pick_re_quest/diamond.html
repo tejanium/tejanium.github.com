@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Pick Re:Quest</title>
+  <script>
+    window.game_configuration = {
+      p1_loc: 4,
+      p2_loc: 13,
+      c1_loc: 10,
+      c2_loc: 11,
+      d1: 1,
+      d2: 1,
+      alert: false,
+      endless: true
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="js/game_engine/index.js"></script>
+  <script type="module" src="js/dom_renderer/index.js"></script>
+</head>
+
+<body>
+  <div class="flex items-center justify-center m-5">
+    <div id="game-container" class="text-center"></div>
+  </div>
+
+  <div class="flex items-center justify-center m-5">
+    <ul class="list-decimal">
+      <li>We got diamonds, the player can pick the diamond!</li>
+      <li>Try to put the diamond into the chest!</li>
+    </ul>
+  </div>
+
+  <div class="flex items-center justify-center m-5">
+    <a href="teleport.html" id="next-page" class="hidden mt-5 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+      They can't! The chest is closed! What should they do?
+    </a>
+  </div>
+</body>
+
+</html>

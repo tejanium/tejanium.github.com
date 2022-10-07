@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Pick Re:Quest</title>
+  <script>
+    window.game_configuration = {
+      p1_loc: 4,
+      p2_loc: 13,
+      c1_loc: 10,
+      c2_loc: 11,
+      d1: 0,
+      d2: 0,
+      alert: false,
+      endless: true
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="js/game_engine/index.js"></script>
+  <script type="module" src="js/dom_renderer/index.js"></script>
+</head>
+
+<body>
+  <div class="flex items-center justify-center m-5">
+    <div id="game-container" class="text-center"></div>
+  </div>
+
+  <div class="flex items-center justify-center m-5">
+    <ul class="list-decimal">
+      <li>Click "Next Turn" to animate</li>
+      <li>RED chest is open only when the GREEN player is nearby</li>
+      <li>GREEN chest is open only when the RED player is nearby</li>
+    </ul>
+  </div>
+
+  <div class="flex items-center justify-center m-5">
+    <a href="diamond.html" id="next-page" class="hidden mt-5 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+      Understood, next!
+    </a>
+  </div>
+</body>
+
+</html>

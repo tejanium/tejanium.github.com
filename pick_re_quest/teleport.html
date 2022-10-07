@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Pick Re:Quest</title>
+  <script>
+    window.game_configuration = {
+      p1_loc: 7,
+      p2_loc: 20,
+      c1_loc: 10,
+      c2_loc: 11,
+      d1: 1,
+      d2: 1,
+      alert: true,
+      endless: true
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="js/game_engine/index.js"></script>
+  <script type="module" src="js/dom_renderer/index.js"></script>
+</head>
+
+<body>
+  <div class="flex items-center justify-center m-5">
+    <div id="game-container" class="text-center"></div>
+  </div>
+
+  <div class="flex items-center justify-center m-5">
+    <ul class="list-decimal">
+      <li>Players will have an option to TELEPORT to the chest!</li>
+      <li>Be careful though, if the player is holding a diamond and TELEPORT, they will drop their diamond.</li>
+      <li>And the player needs to go back all the way to where they dropped the diamond</li>
+      <li>Players will be able to TELEPORT when asked! And you can choose NOT to TELEPORT</li>
+    </ul>
+  </div>
+
+  <div class="flex items-center justify-center m-5 hidden space-x-2" id="next-page">
+    <a href="teleport.html" class="mt-5 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+      Reset
+    </a>
+    <a href="game.html" class="mt-5 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+      Let's Play!
+    </a>
+  </div>
+</body>
+
+</html>
