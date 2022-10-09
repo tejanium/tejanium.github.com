@@ -135,26 +135,37 @@ function renderTurnCount(new_game_html) {
 
 function checkTeleportable() {
   if (game_engine.player_2.isNeedHelp()) {
-    if (
-      confirm(
-        "RED needs help to open the Magic Chest!\n\nTeleport GREEN to the Magic Chest?".trim()
-      )
-    ) {
-      game_engine.teleportPlayer1();
-      renderGameEngine();
-    }
+    dialog(
+      "RED needs GREEN<br/>to open the Chest!<br/><br/>Drop the diamond and Teleport GREEN to the Chest?",
+      () => {
+        game_engine.teleportPlayer1();
+        renderGameEngine();
+      }
+    );
   }
 
   if (game_engine.player_1.isNeedHelp()) {
-    if (
-      confirm(
-        "GREEN needs help to open the Magic Chest!\n\nTeleport RED to the Magic Chest?".trim()
-      )
-    ) {
-      game_engine.teleportPlayer2();
-      renderGameEngine();
-    }
+    dialog(
+      "GREEN needs RED<br/>to open the Chest!<br/><br/>Drop the diamond and Teleport RED to the Chest?",
+      () => {
+        game_engine.teleportPlayer2();
+        renderGameEngine();
+      }
+    );
   }
+}
+
+function dialog(message, callback) {
+  Swal.fire({
+    title: message,
+    showDenyButton: true,
+    confirmButtonText: "TELEPORT",
+    denyButtonText: "No, thank you!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      callback();
+    }
+  });
 }
 
 renderGameEngine();
