@@ -15,7 +15,9 @@ function renderGameEngine() {
 
   if (!window.game_configuration.endless && game_engine.end) {
     setTimeout(() => {
-      alert("Everyone is a winner! Total turns: " + game_engine.turn_count);
+      customAlert(
+        "Everyone is a winner!<br/>Total turns: " + game_engine.turn_count
+      );
     }, 100);
   } else {
     renderNextTurnButton(new_game_html);
@@ -135,7 +137,7 @@ function renderTurnCount(new_game_html) {
 
 function checkTeleportable() {
   if (game_engine.player_2.isNeedHelp()) {
-    dialog(
+    customConfirm(
       "RED needs GREEN<br/>to open the Chest!<br/><br/>Drop the diamond and Teleport GREEN to the Chest?",
       () => {
         game_engine.teleportPlayer1();
@@ -145,7 +147,7 @@ function checkTeleportable() {
   }
 
   if (game_engine.player_1.isNeedHelp()) {
-    dialog(
+    customConfirm(
       "GREEN needs RED<br/>to open the Chest!<br/><br/>Drop the diamond and Teleport RED to the Chest?",
       () => {
         game_engine.teleportPlayer2();
@@ -155,7 +157,7 @@ function checkTeleportable() {
   }
 }
 
-function dialog(message, callback) {
+function customConfirm(message, callback) {
   Swal.fire({
     title: message,
     showDenyButton: true,
@@ -166,6 +168,10 @@ function dialog(message, callback) {
       callback();
     }
   });
+}
+
+function customAlert(message) {
+  Swal.fire({ title: message });
 }
 
 renderGameEngine();
